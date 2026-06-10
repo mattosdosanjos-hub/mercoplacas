@@ -584,14 +584,16 @@ async function gerarPDF() {
   doc.setFont('helvetica','bold');
   doc.text(cpf, ml + 22, y);
   doc.setFont('helvetica','normal');
-  doc.line(ml + 22, y + 1, 120, y + 1);
-  doc.text('Proprietário do veículo Placa', 124, y);
-  doc.setFont('helvetica','bold');
-  doc.text(placa, 165, y);
-  doc.setFont('helvetica','normal');
-  doc.line(165, y + 1, mr, y + 1);
+  doc.line(ml + 22, y + 1, mr, y + 1);
 
-  y += 14;
+  y += 12;
+  doc.text('Proprietário do veículo — Placa:', ml, y);
+  doc.setFont('helvetica','bold');
+  doc.text(placa, ml + 65, y);
+  doc.setFont('helvetica','normal');
+  doc.line(ml + 65, y + 1, ml + 65 + 30, y + 1);
+
+  y += 12;
   doc.text('Solicito uma nova autorização de estampagem:', ml, y);
 
   // PLACA
