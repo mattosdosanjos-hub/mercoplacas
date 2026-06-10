@@ -653,14 +653,14 @@ async function gerarPDF() {
   doc.line(ml + 80, y + 1, ml + 95, y + 1);
 
   // Assinatura
-  y += 30;
+  y += 18;
   const sigData = canvas.toDataURL('image/png');
-  doc.addImage(sigData, 'PNG', 65, y, 80, 25);
+  doc.addImage(sigData, 'PNG', 65, y, 80, 22);
   doc.setLineWidth(0.5);
-  doc.line(65, y + 28, 145, y + 28);
+  doc.line(65, y + 24, 145, y + 24);
   doc.setFontSize(9);
   doc.setFont('helvetica','normal');
-  doc.text('Assinatura requerente', 105, y + 34, {align:'center'});
+  doc.text('Assinatura requerente', 105, y + 30, {align:'center'});
 
   // Salvar
   const filename = `Requerimento_${placa}_${dia}${mes}${ano}.pdf`;
