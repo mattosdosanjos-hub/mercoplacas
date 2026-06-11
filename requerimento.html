@@ -8,7 +8,7 @@
 <!-- Open Graph / WhatsApp / redes sociais -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Requerimento de Estampagem — DETRAN" />
-<meta property="og:description" content="Preencha e assine digitalmente o requerimento de nova placa pelo celular. Mercoplacas — Florianópolis & São José." />
+<meta property="og:description" content="Preencha o requerimento de nova placa pelo celular. Mercoplacas — Florianópolis & São José." />
 <meta property="og:image" content="https://mattosdosanjos-hub.github.io/mercoplacas/logo.png" />
 <meta property="og:image:width" content="1024" />
 <meta property="og:image:height" content="1024" />
@@ -148,12 +148,8 @@
     box-shadow: 0 0 0 3px var(--brand-light);
   }
   .field input.error { border-color: var(--danger); }
-  .field-hint {
-    font-size: 11px; color: var(--muted); margin-top: 4px;
-  }
-  .field-error {
-    font-size: 11px; color: var(--danger); margin-top: 4px; display: none;
-  }
+  .field-hint { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .field-error { font-size: 11px; color: var(--danger); margin-top: 4px; display: none; }
 
   /* Row */
   .row { display: flex; gap: 10px; }
@@ -165,13 +161,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
-  .opt {
-    position: relative;
-    cursor: pointer;
-  }
-  .opt input[type="checkbox"] {
-    position: absolute; opacity: 0; width: 0; height: 0;
-  }
+  .opt { position: relative; cursor: pointer; }
+  .opt input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
   .opt-face {
     display: flex; align-items: center; gap: 10px;
     padding: 12px 14px;
@@ -181,10 +172,7 @@
     user-select: none;
     -webkit-tap-highlight-color: transparent;
   }
-  .opt input:checked + .opt-face {
-    border-color: var(--brand);
-    background: var(--brand-light);
-  }
+  .opt input:checked + .opt-face { border-color: var(--brand); background: var(--brand-light); }
   .opt-face:active { transform: scale(0.97); }
   .opt-check {
     width: 18px; height: 18px;
@@ -195,10 +183,7 @@
     flex-shrink: 0;
     transition: all 0.15s;
   }
-  .opt input:checked + .opt-face .opt-check {
-    background: var(--brand);
-    border-color: var(--brand);
-  }
+  .opt input:checked + .opt-face .opt-check { background: var(--brand); border-color: var(--brand); }
   .opt input:checked + .opt-face .opt-check::after {
     content: '';
     width: 9px; height: 5px;
@@ -208,62 +193,6 @@
     display: block;
   }
   .opt-text { font-size: 13px; font-weight: 500; line-height: 1.3; }
-
-  /* Signature area */
-  .sig-area {
-    border: 1.5px dashed var(--border);
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    position: relative;
-  }
-  .sig-canvas {
-    display: block;
-    width: 100%;
-    height: 120px;
-    cursor: crosshair;
-    touch-action: none;
-  }
-  .sig-placeholder {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-    font-size: 13px; color: var(--muted);
-    pointer-events: none;
-    text-align: center;
-    line-height: 1.4;
-  }
-  .sig-actions {
-    display: flex; gap: 8px; margin-top: 8px;
-  }
-  .btn-clear {
-    flex: 1;
-    padding: 10px;
-    background: none;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-sm);
-    font-size: 13px; color: var(--muted);
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-  }
-  .btn-clear:active { background: var(--bg); }
-
-  /* Sig notice */
-  .sig-notice {
-    background: #FFF8E8;
-    border: 1px solid #F5D87A;
-    border-left: 4px solid #E8A000;
-    border-radius: var(--radius-sm);
-    padding: 10px 12px;
-    font-size: 13px;
-    color: #7A5800;
-    line-height: 1.6;
-    margin-bottom: 12px;
-  }
-  .sig-notice svg {
-    width: 14px; height: 14px;
-    vertical-align: middle;
-    margin-right: 4px;
-    color: #E8A000;
-  }
-  .sig-notice strong { font-weight: 600; }
 
   /* Footer CTA */
   .footer-cta {
@@ -317,6 +246,82 @@
     font-size: 13px; color: var(--danger);
     margin-bottom: 14px;
   }
+
+  /* ── Bloco de orientação de assinatura ── */
+  .assinatura-orientacao {
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  }
+  .ao-header {
+    background: #B91C1C;
+    color: white;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ao-header svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .ao-header-text {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+  .ao-body {
+    background: #FFF5F5;
+    padding: 16px 18px;
+    border: 2px solid #B91C1C;
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+  .ao-opcao {
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed #FECACA;
+  }
+  .ao-opcao:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .ao-opcao-titulo {
+    font-size: 14px;
+    font-weight: 800;
+    color: #B91C1C;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ao-opcao-titulo .badge {
+    background: #B91C1C;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 20px;
+  }
+  .ao-opcao p {
+    font-size: 13px;
+    color: #7F1D1D;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  .ao-opcao p strong { font-weight: 800; color: #991B1B; }
+  .ao-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    background: #003B8E;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 9px 14px;
+    border-radius: 7px;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .ao-link svg { width: 14px; height: 14px; }
 </style>
 </head>
 <body>
@@ -402,22 +407,46 @@
     </div>
   </div>
 
-  <!-- Assinatura -->
-  <div class="card">
-    <div class="card-label">Assinatura *</div>
-    <div class="sig-notice">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      A assinatura deve ser <strong>idêntica ao documento de identidade</strong> (RG ou CNH) do proprietário do veículo.
+  <!-- Orientações de assinatura -->
+  <div class="assinatura-orientacao">
+    <div class="ao-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+      <div class="ao-header-text">⚠️ Atenção — Como assinar o documento</div>
     </div>
-    <div class="sig-area" id="sigArea">
-      <canvas class="sig-canvas" id="sigCanvas"></canvas>
-      <div class="sig-placeholder" id="sigPlaceholder">
-        ✍️<br>Assine aqui com o dedo<br>ou cursor
+    <div class="ao-body">
+
+      <div class="ao-opcao">
+        <div class="ao-opcao-titulo">
+          <span class="badge">OPÇÃO 1</span>
+          Assinatura Digital pelo Gov.br (recomendado)
+        </div>
+        <p>
+          Após baixar o PDF, acesse o site do Gov.br e use a função
+          <strong>Assinar Documento</strong>. A assinatura digital pelo Gov.br
+          tem <strong>validade jurídica</strong> e é aceita pelo DETRAN.
+        </p>
+        <a class="ao-link" href="https://assinador.iti.br" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Acessar Assinador Gov.br
+        </a>
       </div>
-    </div>
-    <div class="field-error" id="err-sig" style="display:none; margin-top:8px">Assinatura obrigatória</div>
-    <div class="sig-actions">
-      <button class="btn-clear" onclick="clearSig()">Apagar assinatura</button>
+
+      <div class="ao-opcao">
+        <div class="ao-opcao-titulo">
+          <span class="badge">OPÇÃO 2</span>
+          Imprimir e Assinar à Mão
+        </div>
+        <p>
+          Baixe o PDF, <strong>imprima a folha</strong> e assine
+          <strong>à caneta</strong>, da mesma forma que você assina seu
+          <strong>RG ou CNH</strong>. Em seguida, tire uma foto ou escaneie
+          e envie o documento assinado.
+        </p>
+      </div>
+
     </div>
   </div>
 
@@ -467,15 +496,14 @@ document.getElementById('placa').addEventListener('input', function() {
 
 // ── Progress ───────────────────────────────────────────────────────
 function updateProgress() {
-  const nome = document.getElementById('nome').value.trim();
-  const cpf  = document.getElementById('cpf').value.trim();
+  const nome  = document.getElementById('nome').value.trim();
+  const cpf   = document.getElementById('cpf').value.trim();
   const placa = document.getElementById('placa').value.trim();
   const data  = document.getElementById('data').value;
   const tipo  = document.querySelectorAll('input[name="placa_tipo"]:checked').length;
   const motivo = document.querySelectorAll('input[name="motivo"]:checked').length;
-  const sig   = !sigEmpty;
 
-  const fields = [!!nome, !!cpf, !!placa, !!data, tipo > 0, motivo > 0, sig];
+  const fields = [!!nome, !!cpf, !!placa, !!data, tipo > 0, motivo > 0];
   const done = fields.filter(Boolean).length;
   const pct = Math.round(done / fields.length * 100);
 
@@ -486,47 +514,6 @@ function updateProgress() {
 
 document.querySelectorAll('input').forEach(el => el.addEventListener('change', updateProgress));
 document.querySelectorAll('input[type="text"], input[type="date"]').forEach(el => el.addEventListener('input', updateProgress));
-
-// ── Assinatura ─────────────────────────────────────────────────────
-const canvas = document.getElementById('sigCanvas');
-const ctx = canvas.getContext('2d');
-let drawing = false, sigEmpty = true;
-
-function resizeCanvas() {
-  const rect = canvas.getBoundingClientRect();
-  canvas.width = rect.width * window.devicePixelRatio;
-  canvas.height = rect.height * window.devicePixelRatio;
-  ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-  ctx.strokeStyle = '#1A1D23';
-  ctx.lineWidth = 2;
-  ctx.lineCap = 'round';
-  ctx.lineJoin = 'round';
-}
-resizeCanvas();
-
-function getPos(e) {
-  const r = canvas.getBoundingClientRect();
-  if (e.touches) {
-    return { x: e.touches[0].clientX - r.left, y: e.touches[0].clientY - r.top };
-  }
-  return { x: e.clientX - r.left, y: e.clientY - r.top };
-}
-
-canvas.addEventListener('mousedown', e => { drawing = true; const p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); });
-canvas.addEventListener('mousemove', e => { if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); sigEmpty = false; document.getElementById('sigPlaceholder').style.display='none'; updateProgress(); });
-canvas.addEventListener('mouseup', () => drawing = false);
-canvas.addEventListener('mouseleave', () => drawing = false);
-
-canvas.addEventListener('touchstart', e => { e.preventDefault(); drawing = true; const p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); }, {passive:false});
-canvas.addEventListener('touchmove', e => { e.preventDefault(); if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); sigEmpty = false; document.getElementById('sigPlaceholder').style.display='none'; updateProgress(); }, {passive:false});
-canvas.addEventListener('touchend', () => drawing = false);
-
-function clearSig() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  sigEmpty = true;
-  document.getElementById('sigPlaceholder').style.display = '';
-  updateProgress();
-}
 
 // ── Toast ──────────────────────────────────────────────────────────
 function showToast(msg, type='') {
@@ -555,9 +542,6 @@ function validate() {
   document.getElementById('err-motivo').style.display = mot ? 'none' : 'block';
   if (!mot) ok = false;
 
-  document.getElementById('err-sig').style.display = sigEmpty ? 'block' : 'none';
-  if (sigEmpty) ok = false;
-
   document.getElementById('validMsg').style.display = ok ? 'none' : 'block';
   return ok;
 }
@@ -575,20 +559,18 @@ async function gerarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ unit:'mm', format:'a4' });
 
-  const nome  = document.getElementById('nome').value.trim();
-  const cpf   = document.getElementById('cpf').value.trim();
-  const placa = document.getElementById('placa').value.trim().toUpperCase();
+  const nome   = document.getElementById('nome').value.trim();
+  const cpf    = document.getElementById('cpf').value.trim();
+  const placa  = document.getElementById('placa').value.trim().toUpperCase();
   const dataVal = document.getElementById('data').value;
 
-  // Formatar data em pt-BR
   const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
   const [ano, mes, dia] = dataVal.split('-');
   const dataFormatada = { dia, mes: meses[parseInt(mes)-1], ano };
 
-  const tipos  = [...document.querySelectorAll('input[name="placa_tipo"]:checked')].map(e=>e.value);
+  const tipos   = [...document.querySelectorAll('input[name="placa_tipo"]:checked')].map(e=>e.value);
   const motivos = [...document.querySelectorAll('input[name="motivo"]:checked')].map(e=>e.value);
 
-  // Margens
   const ml = 25, mr = 185, mt = 20;
 
   // Cabeçalho
@@ -602,7 +584,6 @@ async function gerarPDF() {
   doc.setLineWidth(0.5);
   doc.line(75, mt + 32, 135, mt + 32);
 
-  // Dados
   doc.setFont('helvetica','normal');
   doc.setFontSize(10);
 
@@ -626,7 +607,7 @@ async function gerarPDF() {
   doc.setFont('helvetica','bold');
   doc.text(placa, ml + 65, y);
   doc.setFont('helvetica','normal');
-  doc.line(ml + 65, y + 1, ml + 65 + 30, y + 1);
+  doc.line(ml + 65, y + 1, ml + 95, y + 1);
 
   y += 12;
   doc.text('Solicito uma nova autorização de estampagem:', ml, y);
@@ -681,26 +662,21 @@ async function gerarPDF() {
   doc.text(dataFormatada.ano, ml + 81, y);
   doc.setFont('helvetica','normal');
 
-  // Linha data
   doc.setLineWidth(0.3);
   doc.line(ml + 37, y + 1, ml + 44, y + 1);
   doc.line(ml + 51, y + 1, ml + 73, y + 1);
   doc.line(ml + 80, y + 1, ml + 95, y + 1);
 
-  // Assinatura
-  y += 18;
-  const sigData = canvas.toDataURL('image/png');
-  doc.addImage(sigData, 'PNG', 65, y, 80, 22);
+  // Assinatura — linha em branco para o cliente assinar
+  y += 28;
   doc.setLineWidth(0.5);
-  doc.line(65, y + 24, 145, y + 24);
+  doc.line(65, y, 145, y);
   doc.setFontSize(9);
-  doc.setFont('helvetica','normal');
-  doc.text('Assinatura requerente', 105, y + 30, {align:'center'});
+  doc.text('Assinatura requerente', 105, y + 6, {align:'center'});
 
-  // Salvar
   const filename = `Requerimento_${placa}_${dia}${mes}${ano}.pdf`;
   doc.save(filename);
-  showToast('✓ PDF gerado com sucesso!', 'success');
+  showToast('✓ PDF gerado! Agora assine conforme as instruções acima.', 'success');
 }
 </script>
 </body>
